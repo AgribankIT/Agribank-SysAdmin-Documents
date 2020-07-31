@@ -1,0 +1,1 @@
+# Hướng dẫn cài đặt, cấu hình DFS mirror ở File Server của CN
