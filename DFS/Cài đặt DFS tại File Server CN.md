@@ -25,11 +25,11 @@ Sơ lược hệ thống tại CN như sau:
 
 ## Cài đặt và Cấu hình
 
-##1. Cấu hình máy chủ File Server CN:
+## 1. Cấu hình máy chủ File Server CN:
 - Windows Server 2008 Standard R2 - 64bit đã join domain `corp.apple.com`. Nên cài và cấu hình thêm `FSRM` (đã có note ở trên).
 - Tạo thư mục `dfs_cn` trên một phân vùng bất kỳ. Share thư mục này theo quy định của Apple đảm bảo phân quyền tối thiểu.
 
-##2. Sao chép (clone) cấu trúc thư mục `DFS_Main` về `DFS_CN`:
+## 2. Sao chép (clone) cấu trúc thư mục `DFS_Main` về `DFS_CN`:
 Xin lưu ý là chỉ clone **cấu trúc thư mục** không bao gồm tập tin.
 
 Có nhiều cách để clone, ở đây chúng ta dùng tiện ích có sẵn của Windows Server là `robocopy`. Đây là một tiện ích khá hay dùng trong việc backup dữ liệu mà các SysAdmin nên biết qua (Google).
@@ -55,7 +55,7 @@ robocopy \\corp.apple.com\dfs e:\dfs_cn /zb /e /xf * /xd DfsrPrivate
 
 - Lưu thiết lập cấu hình thành tập tin định dạng riêng của FreeFileSync vào đâu đó vd: `D:\Contribute2DFS.ffs_batch`.
 
-### 4. Hướng dẫn cấu hình FreeFileSync với Schedule của Windows
+## 4. Hướng dẫn cấu hình FreeFileSync với Schedule của Windows
 Xem [hướng dẫn cấu hình FreeFileSync với Schedule của Windows](https://freefilesync.org/manual.php?topic=schedule-batch-jobs). 
 
-### 5. Chạy test, tận hưởng kết quả và ... đi nhậu thôi.
+## 5. Chạy test, tận hưởng kết quả và ... đi nhậu thôi.
