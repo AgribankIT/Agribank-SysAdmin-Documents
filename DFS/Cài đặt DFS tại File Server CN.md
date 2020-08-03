@@ -47,7 +47,7 @@ robocopy \\corp.apple.com\dfs e:\dfs_cn /zb /e /xf * /xd DfsrPrivate
 - Định kỳ, Admin CN nên thực hiện lại lệnh này để đảm bảo cấu trúc thư mục luôn được cập nhật đầy đủ tránh trường hợp người dùng khi vào `DFS_CN` không tìm ra thư mục để gửi dữ liệu vào.
 - Đồng thời nếu thấy báo lỗi `Access denied` trên thư mục nào đó ở `DFS_Main` thì thêm vào `/xd Ten_Thu_Muc_1 /xd Ten_Thu_Muc_2` để exclude ra khỏi quá trình clone.
 
-##3. Cài đặt phần mềm hỗ trợ đồng bộ tự động (auto sync)
+## 3. Cài đặt phần mềm hỗ trợ đồng bộ tự động (auto sync)
 
 - Trên File Server cài đặt phần mềm **FreeFileSync** [https://freefilesync.org/download.php](https://freefilesync.org/download.php) (thấy tên nên mạnh dạn đoán phần mềm miễn phí, anh em tạm khỏi lo khoản "lai-sần")
 
@@ -55,7 +55,7 @@ robocopy \\corp.apple.com\dfs e:\dfs_cn /zb /e /xf * /xd DfsrPrivate
 
 - Lưu thiết lập cấu hình thành tập tin định dạng riêng của FreeFileSync vào đâu đó vd: `D:\Contribute2DFS.ffs_batch`.
 
-###4. Hướng dẫn cấu hình FreeFileSync với Schedule của Windows
+### 4. Hướng dẫn cấu hình FreeFileSync với Schedule của Windows
 Xem [hướng dẫn cấu hình FreeFileSync với Schedule của Windows](https://freefilesync.org/manual.php?topic=schedule-batch-jobs). 
 
-###5. Chạy test, tận hưởng kết quả và ... đi nhậu thôi.
+### 5. Chạy test, tận hưởng kết quả và ... đi nhậu thôi.
