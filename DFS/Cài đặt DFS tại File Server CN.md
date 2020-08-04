@@ -19,7 +19,7 @@ Phần này đơn giản là hướng dẫn người dùng truy cập vào đị
 ### Upload (gửi) dữ liệu lên DFS.
 Sơ lược hệ thống tại CN như sau:
 - Admin CN dùng một máy chủ (Windows Server) có chức năng chia sẻ dữ liệu (File Server) trong nội bộ. Vd: `\\File-Server-CN\dfs`.
-- Bên trong thư mục `dfs` này (để phân biệt, từ giờ sẽ gọi là `DFS_CN`) đã được Admin CN sao chép **cấu trúc thư mục** y hệt từ DFS chính (gọi là `DFS_Main`).
+- Bên trong thư mục share `dfs` này (để phân biệt, từ giờ sẽ gọi là `DFS_CN`) đã được Admin CN sao chép **cấu trúc thư mục** y hệt từ DFS chính (gọi là `DFS_Main`).
 - Người dùng cuối (không phải Admin CN) sử dụng tài khoản Active Directory của mình gửi dữ liệu vào các thư mục tương ứng trong `DFS_CN`.
 - Trên máy chủ File Server CN có phần mềm đồng bộ tự động định kỳ đồng bộ (1 chiều) từ `DFS_CN` lên `DFS_Main`.
 
@@ -34,7 +34,7 @@ Xin lưu ý là chỉ clone **cấu trúc thư mục** không bao gồm tập ti
 
 Có nhiều cách để clone, ở đây chúng ta dùng tiện ích có sẵn của Windows Server là `robocopy`. Đây là một tiện ích khá hay dùng trong việc backup dữ liệu mà các SysAdmin nên biết qua (Google).
 
-- Đăng nhập vào File Server với tài khoản có quyền trên `DFS_Main`. Vd: `california-admin-01@apple.com`. Truy cập vào `corp.apple.com\dfs`.
+- Đăng nhập vào File Server với tài khoản có quyền trên `DFS_Main`. Vd: `california-admin-01@apple.com`. Truy cập vào `\\corp.apple.com\dfs`.
 - Mở `PowerShell` với quyền Administrator.
 - Gõ dòng lệnh sau:
 
@@ -51,7 +51,7 @@ robocopy \\corp.apple.com\dfs e:\dfs_cn /zb /e /xf * /xd DfsrPrivate
 
 - Trên File Server cài đặt phần mềm **FreeFileSync** [https://freefilesync.org/download.php](https://freefilesync.org/download.php) (thấy tên nên mạnh dạn đoán phần mềm miễn phí, anh em tạm khỏi lo khoản "lai-sần")
 
-- Cấu hình **đồng bộ 1 chiều*** từ thư mục `dfs_cn` lên `corp.apple.com\dfs`.
+- Cấu hình **đồng bộ 1 chiều*** từ thư mục `dfs_cn` lên `\\corp.apple.com\dfs`.
 
 - Lưu thiết lập cấu hình thành tập tin định dạng riêng của FreeFileSync vào đâu đó vd: `D:\Contribute2DFS.ffs_batch`.
 
