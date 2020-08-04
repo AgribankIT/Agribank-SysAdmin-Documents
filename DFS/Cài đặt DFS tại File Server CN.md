@@ -55,7 +55,8 @@ robocopy \\corp.apple.com\dfs e:\dfs_cn /zb /e /xf * /xd DfsrPrivate
 
 - Lưu thiết lập cấu hình thành tập tin định dạng riêng của FreeFileSync vào đâu đó vd: `D:\Contribute2DFS.ffs_batch`.
 
-Bổ sung thêm nội dung file `Contribute2DFS.ffs_batch`:
+Bổ sung thêm nội dung file `Contribute2DFS.ffs_batch`. 
+(Download: [Contribute2DFS.ffs_batch](https://github.com/AgribankIT/Agribank-SysAdmin-Documents/blob/master/DFS/Contribute2DFS.ffs_batch))
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
