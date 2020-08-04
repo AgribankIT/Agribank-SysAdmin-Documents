@@ -55,6 +55,52 @@ robocopy \\corp.apple.com\dfs e:\dfs_cn /zb /e /xf * /xd DfsrPrivate
 
 - Lưu thiết lập cấu hình thành tập tin định dạng riêng của FreeFileSync vào đâu đó vd: `D:\Contribute2DFS.ffs_batch`.
 
+Bổ sung thêm nội dung file `Contribute2DFS.ffs_batch`:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<FreeFileSync XmlType="GUI" XmlFormat="16">
+    <Compare>
+        <Variant>TimeAndSize</Variant>
+        <Symlinks>Exclude</Symlinks>
+        <IgnoreTimeShift/>
+    </Compare>
+    <Synchronize>
+        <Variant>Mirror</Variant>
+        <DetectMovedFiles>true</DetectMovedFiles>
+        <DeletionPolicy>RecycleBin</DeletionPolicy>
+        <VersioningFolder Style="Replace"/>
+    </Synchronize>
+    <Filter>
+        <Include>
+            <Item>*</Item>
+        </Include>
+        <Exclude>
+            <Item>\System Volume Information\</Item>
+            <Item>\$Recycle.Bin\</Item>
+            <Item>\RECYCLE?\</Item>
+            <Item>*\thumbs.db</Item>
+        </Exclude>
+        <TimeSpan Type="None">0</TimeSpan>
+        <SizeMin Unit="None">0</SizeMin>
+        <SizeMax Unit="None">0</SizeMax>
+    </Filter>
+    <FolderPairs>
+        <Pair>
+            <Left>E:\dfs_cn5\dfs</Left>
+            <Right>G:\</Right>
+        </Pair>
+    </FolderPairs>
+    <Errors Ignore="true" Retry="0" Delay="5"/>
+    <PostSyncCommand Condition="Completion"/>
+    <LogFolder>E:\dfs_cn5\logs</LogFolder>
+    <EmailNotification Condition="Always"/>
+    <Gui>
+        <MiddleGridView>Action</MiddleGridView>
+    </Gui>
+</FreeFileSync>
+```
+
 ## 4. Hướng dẫn cấu hình FreeFileSync với Schedule của Windows
 Xem [hướng dẫn cấu hình FreeFileSync với Schedule của Windows](https://freefilesync.org/manual.php?topic=schedule-batch-jobs). 
 
